@@ -1,13 +1,16 @@
-// Please fill in below.
-// <Your name>
-// <Your section number> (e.g. CPSC 121L-01)
-// <Date>
-// <Your csu.fullerton.edu email>
-// <Your GitHub username>
+// Brian Milian
+// CPSC 121L-01
+// 2023-04-17
+// brianmilian@csu.fullerton.edu
+// @brian-250
 //
 // Lab 12-1
 // If it is a pair programming lab please specify partner below.
 // Partner: @peteranteater
+//
+// This program performs recursion to retrieve information from customers in
+// a market line
+//
 
 #include <iostream>
 #include <memory>
@@ -34,6 +37,7 @@ int main() {
   // 1. Print out the total number of customers waiting
   //    in line by invoking TotalCustomersInLine.
   // ======================================================
+  std::cout << adele->TotalCustomersInLine();
   std::cout << std::endl;
 
   std::cout << "Total products to be purchased: ";
@@ -41,6 +45,7 @@ int main() {
   // 2. Print out the total number of products held by
   //    customers in line by invoking TotalProductsInLine.
   // ======================================================
+  std::cout << adele->TotalProductsInLine();
   std::cout << std::endl;
 
   std::cout << "First customer name alphabetically: ";
@@ -49,6 +54,7 @@ int main() {
   //    name comes first alphabetically by invoking
   //    FirstAlphabeticalCustomerInLine.
   // ======================================================
+  std::cout << adele->FirstAlphabeticalCustomerInLine();
   std::cout << std::endl;
   return 0;
 }

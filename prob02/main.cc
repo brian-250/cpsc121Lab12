@@ -37,6 +37,7 @@ int main() {
   //    train by invoking TotalTrainPassengers on the
   //    first carriage in the train (the locomotive).
   // ======================================================
+  
   std::cout << std::endl;
 
   std::cout << "Max passengers in a carriage: ";
