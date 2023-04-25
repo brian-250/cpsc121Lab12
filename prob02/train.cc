@@ -1,13 +1,16 @@
-// Please fill in below.
-// <Your name>
-// <Your section number> (e.g. CPSC 121L-01)
-// <Date>
-// <Your csu.fullerton.edu email>
-// <Your GitHub username>
+// Brian Milian
+// CPSC 121L-01
+// 2023-04-17
+// brianmilian@csu.fullerton.edu
+// @brian-250
 //
-// Lab 12-2
+// Lab 12-1
 // If it is a pair programming lab please specify partner below.
 // Partner: @peteranteater
+//
+// This program performs recursion to retrieve and change information
+// from a train and it's carriages
+//
 
 #include "train.h"
 
@@ -22,3 +25,35 @@
 //     }
 // to tell the compiler that each function belongs to the Train class.
 // ===================================================================
+int Train::TotalTrainPassengers() {
+  if (next_carriage_ == nullptr) {
+    return passenger_count_;
+  } else {
+    return passenger_count_ + next_carriage_->TotalTrainPassengers();
+  }
+}
+int Train::MaxCarriagePassengers() {
+  if (next_carriage_ == nullptr) {
+    return passenger_count_;
+  } else {
+    if (next_carriage_->MaxCarriagePassengers() < passenger_count_) {
+      return passenger_count_;
+    } else {
+      return next_carriage_->MaxCarriagePassengers();
+    }
+  }
+}
+bool Train::IsTrainFull() {
+  if (next_carriage_ == nullptr) {
+    return passenger_count_ == seat_count_;
+  } else {
+    return next_carriage_->IsTrainFull();
+  }
+}
+void Train::AddCarriageToEnd(std::shared_ptr<Train> train) {
+  if (next_carriage_ == nullptr) {
+    next_carriage_ = train;
+  } else {
+    next_carriage_->AddCarriageToEnd(train);
+  }
+}

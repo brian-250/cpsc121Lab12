@@ -1,13 +1,16 @@
-// Please fill in below.
-// <Your name>
-// <Your section number> (e.g. CPSC 121L-01)
-// <Date>
-// <Your csu.fullerton.edu email>
-// <Your GitHub username>
+// Brian Milian
+// CPSC 121L-01
+// 2023-04-17
+// brianmilian@csu.fullerton.edu
+// @brian-250
 //
-// Lab 12-2
+// Lab 12-1
 // If it is a pair programming lab please specify partner below.
 // Partner: @peteranteater
+//
+// This program performs recursion to retrieve and change information
+// from a train and it's carriages
+//
 
 #include <memory>
 #include <string>
@@ -38,6 +41,10 @@ class Train {
   //   3. IsTrainFull
   //   4. AddCarriageToEnd
   // ============================================================
+  int TotalTrainPassengers();
+  int MaxCarriagePassengers();
+  bool IsTrainFull();
+  void AddCarriageToEnd(std::shared_ptr<Train> train);
 
  private:
   int passenger_count_;
